@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <script>
+        function calcularIMC(peso, estaturaCm) {
+            const estaturaM = estaturaCm / 100;
+            return peso / (estaturaM ** 2);
+        }
+
+        function obtenerDatos() {
+            const nombre = prompt("Introduce tu nombre:");
+            const edad = parseInt(prompt("Introduce tu edad:"), 10);
+            const peso = parseFloat(prompt("Introduce tu peso en kilogramos:"));
+            const estaturaCm = parseFloat(prompt("Introduce tu estatura en centímetros:"));
+
+            const imc = calcularIMC(peso, estaturaCm);
+
+            alert(`\nNombre: ${nombre}\nEdad: ${edad} años\nPeso: ${peso} kg\nEstatura: ${estaturaCm} cm\nÍndice de Masa Corporal (IMC): ${imc.toFixed(2)}`);
+        }
+    </script>
+</head>
+<body onload="obtenerDatos()">
+</body>
+</html>
